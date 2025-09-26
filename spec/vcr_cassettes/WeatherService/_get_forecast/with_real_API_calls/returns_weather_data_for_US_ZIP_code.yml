@@ -1,0 +1,113 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/2.5/weather?appid=<OPENWEATHER_API_KEY>&lang=en&q=10001&units=metric
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 26 Sep 2025 14:11:50 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '512'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?lang=en&q=10001&units=metric"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":3.8344,"lat":36.3516},"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"base":"stations","main":{"temp":21.63,"feels_like":21.57,"temp_min":21.63,"temp_max":21.63,"pressure":1017,"humidity":66,"sea_level":1017,"grnd_level":939},"visibility":10000,"wind":{"speed":2.57,"deg":16,"gust":2.33},"rain":{"1h":0.91},"clouds":{"all":100},"dt":1758895910,"sys":{"country":"DZ","sunrise":1758864941,"sunset":1758908174},"timezone":3600,"id":2491134,"name":"Said
+        Abid","cod":200}'
+  recorded_at: Fri, 26 Sep 2025 14:11:48 GMT
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/2.5/forecast?appid=<OPENWEATHER_API_KEY>&cnt=16&lang=en&q=10001&units=metric
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 26 Sep 2025 14:11:51 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '6480'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/forecast?cnt=16&lang=en&q=10001&units=metric"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"cod":"200","message":0,"cnt":16,"list":[{"dt":1758898800,"main":{"temp":22.21,"feels_like":22.16,"temp_min":22.21,"temp_max":22.21,"pressure":1017,"sea_level":1017,"grnd_level":939,"humidity":64,"temp_kf":0},"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"clouds":{"all":99},"wind":{"speed":4.43,"deg":2,"gust":3.76},"visibility":10000,"pop":1,"rain":{"3h":2.6},"sys":{"pod":"d"},"dt_txt":"2025-09-26
+        15:00:00"},{"dt":1758909600,"main":{"temp":21.49,"feels_like":21.47,"temp_min":20.04,"temp_max":21.49,"pressure":1017,"sea_level":1017,"grnd_level":940,"humidity":68,"temp_kf":1.45},"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10n"}],"clouds":{"all":97},"wind":{"speed":2.91,"deg":345,"gust":3.36},"visibility":10000,"pop":1,"rain":{"3h":0.43},"sys":{"pod":"n"},"dt_txt":"2025-09-26
+        18:00:00"},{"dt":1758920400,"main":{"temp":19.77,"feels_like":19.84,"temp_min":18.55,"temp_max":19.77,"pressure":1019,"sea_level":1019,"grnd_level":941,"humidity":78,"temp_kf":1.22},"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04n"}],"clouds":{"all":88},"wind":{"speed":1.15,"deg":30,"gust":1.35},"visibility":10000,"pop":0,"sys":{"pod":"n"},"dt_txt":"2025-09-26
+        21:00:00"},{"dt":1758931200,"main":{"temp":16.97,"feels_like":17.12,"temp_min":16.97,"temp_max":16.97,"pressure":1019,"sea_level":1019,"grnd_level":941,"humidity":92,"temp_kf":0},"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03n"}],"clouds":{"all":44},"wind":{"speed":0.38,"deg":357,"gust":0.24},"visibility":10000,"pop":0,"sys":{"pod":"n"},"dt_txt":"2025-09-27
+        00:00:00"},{"dt":1758942000,"main":{"temp":15.91,"feels_like":16.06,"temp_min":15.91,"temp_max":15.91,"pressure":1019,"sea_level":1019,"grnd_level":940,"humidity":96,"temp_kf":0},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"clouds":{"all":5},"wind":{"speed":1.24,"deg":313,"gust":1.24},"visibility":10000,"pop":0,"sys":{"pod":"n"},"dt_txt":"2025-09-27
+        03:00:00"},{"dt":1758952800,"main":{"temp":15.5,"feels_like":15.64,"temp_min":15.5,"temp_max":15.5,"pressure":1020,"sea_level":1020,"grnd_level":941,"humidity":97,"temp_kf":0},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":{"all":5},"wind":{"speed":0.4,"deg":293,"gust":0.43},"visibility":10000,"pop":0,"sys":{"pod":"d"},"dt_txt":"2025-09-27
+        06:00:00"},{"dt":1758963600,"main":{"temp":19.23,"feels_like":19.06,"temp_min":19.23,"temp_max":19.23,"pressure":1021,"sea_level":1021,"grnd_level":943,"humidity":71,"temp_kf":0},"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02d"}],"clouds":{"all":15},"wind":{"speed":2.32,"deg":343,"gust":2.76},"visibility":10000,"pop":0,"sys":{"pod":"d"},"dt_txt":"2025-09-27
+        09:00:00"},{"dt":1758974400,"main":{"temp":23.54,"feels_like":22.92,"temp_min":23.54,"temp_max":23.54,"pressure":1020,"sea_level":1020,"grnd_level":942,"humidity":37,"temp_kf":0},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":{"all":8},"wind":{"speed":2.69,"deg":360,"gust":3.55},"visibility":10000,"pop":0,"sys":{"pod":"d"},"dt_txt":"2025-09-27
+        12:00:00"},{"dt":1758985200,"main":{"temp":24.96,"feels_like":24.29,"temp_min":24.96,"temp_max":24.96,"pressure":1019,"sea_level":1019,"grnd_level":941,"humidity":30,"temp_kf":0},"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}],"clouds":{"all":65},"wind":{"speed":6.07,"deg":353,"gust":5.49},"visibility":10000,"pop":0,"sys":{"pod":"d"},"dt_txt":"2025-09-27
+        15:00:00"},{"dt":1758996000,"main":{"temp":20.64,"feels_like":19.96,"temp_min":20.64,"temp_max":20.64,"pressure":1020,"sea_level":1020,"grnd_level":942,"humidity":46,"temp_kf":0},"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04n"}],"clouds":{"all":68},"wind":{"speed":3.06,"deg":332,"gust":3.46},"visibility":10000,"pop":0,"sys":{"pod":"n"},"dt_txt":"2025-09-27
+        18:00:00"},{"dt":1759006800,"main":{"temp":19.01,"feels_like":18.35,"temp_min":19.01,"temp_max":19.01,"pressure":1021,"sea_level":1021,"grnd_level":942,"humidity":53,"temp_kf":0},"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04n"}],"clouds":{"all":65},"wind":{"speed":0.69,"deg":161,"gust":0.42},"visibility":10000,"pop":0,"sys":{"pod":"n"},"dt_txt":"2025-09-27
+        21:00:00"},{"dt":1759017600,"main":{"temp":18.16,"feels_like":17.36,"temp_min":18.16,"temp_max":18.16,"pressure":1020,"sea_level":1020,"grnd_level":942,"humidity":51,"temp_kf":0},"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04n"}],"clouds":{"all":73},"wind":{"speed":1.12,"deg":169,"gust":0.98},"visibility":10000,"pop":0,"sys":{"pod":"n"},"dt_txt":"2025-09-28
+        00:00:00"},{"dt":1759028400,"main":{"temp":17.72,"feels_like":16.83,"temp_min":17.72,"temp_max":17.72,"pressure":1019,"sea_level":1019,"grnd_level":941,"humidity":49,"temp_kf":0},"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04n"}],"clouds":{"all":61},"wind":{"speed":1.91,"deg":150,"gust":1.93},"visibility":10000,"pop":0,"sys":{"pod":"n"},"dt_txt":"2025-09-28
+        03:00:00"},{"dt":1759039200,"main":{"temp":18.19,"feels_like":17.21,"temp_min":18.19,"temp_max":18.19,"pressure":1019,"sea_level":1019,"grnd_level":941,"humidity":44,"temp_kf":0},"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}],"clouds":{"all":80},"wind":{"speed":1.9,"deg":157,"gust":1.82},"visibility":10000,"pop":0,"sys":{"pod":"d"},"dt_txt":"2025-09-28
+        06:00:00"},{"dt":1759050000,"main":{"temp":23.17,"feels_like":22.22,"temp_min":23.17,"temp_max":23.17,"pressure":1019,"sea_level":1019,"grnd_level":941,"humidity":26,"temp_kf":0},"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"clouds":{"all":100},"wind":{"speed":1.72,"deg":171,"gust":2},"visibility":10000,"pop":0,"sys":{"pod":"d"},"dt_txt":"2025-09-28
+        09:00:00"},{"dt":1759060800,"main":{"temp":25.91,"feels_like":25.08,"temp_min":25.91,"temp_max":25.91,"pressure":1018,"sea_level":1018,"grnd_level":940,"humidity":20,"temp_kf":0},"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"clouds":{"all":100},"wind":{"speed":1.38,"deg":195,"gust":1.59},"visibility":10000,"pop":0,"sys":{"pod":"d"},"dt_txt":"2025-09-28
+        12:00:00"}],"city":{"id":2491134,"name":"Said Abid","coord":{"lat":36.3516,"lon":3.8344},"country":"DZ","population":56719,"timezone":3600,"sunrise":1758864941,"sunset":1758908174}}'
+  recorded_at: Fri, 26 Sep 2025 14:11:49 GMT
+recorded_with: VCR 6.3.1
