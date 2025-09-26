@@ -1,0 +1,116 @@
+<div data-controller="weather" class="max-w-4xl mx-auto">
+  <!-- Header -->
+  <div class="text-center mb-8">
+    <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">🌤️ Weather App</h1>
+    <p class="text-blue-100 text-lg">Get weather forecasts for any location</p>
+  </div>
+
+  <!-- Search Form -->
+  <div class="weather-card rounded-3xl p-6 mb-8 shadow-2xl">
+    <form data-action="submit->weather#search" data-weather-target="form">
+      <div class="flex flex-col md:flex-row gap-4">
+        <div class="flex-1">
+          <label class="block text-sm font-medium text-gray-700 mb-2">
+            Enter ZIP code, postal code, or city name:
+          </label>
+          <input 
+            data-weather-target="locationInput"
+            type="text" 
+            class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
+            placeholder="e.g. 10001, Indaial, London..."
+            required
+          >
+        </div>
+        <div class="flex items-end">
+          <button 
+            type="submit"
+            data-weather-target="submitButton"
+            class="w-full md:w-auto px-8 py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-xl shadow-lg transition-all duration-300 hover:scale-105"
+          >
+            <span data-weather-target="submitText">🔍 Search</span>
+            <span data-weather-target="loadingText" class="hidden">
+              <div class="loading-spinner inline-block w-5 h-5 border-2 border-white border-t-transparent rounded-full"></div>
+              Searching...
+            </span>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- Loading State -->
+  <div data-weather-target="loading" class="hidden weather-card rounded-3xl p-8 mb-8 shadow-2xl">
+    <div class="text-center">
+      <div class="loading-spinner inline-block w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full mb-4"></div>
+      <p class="text-gray-600 text-lg">Fetching weather forecast...</p>
+    </div>
+  </div>
+
+
+<!-- Error State -->
+  <div data-weather-target="error" class="hidden weather-card rounded-3xl p-6 mb-8 shadow-2xl border-l-4 border-red-500">
+    <div class="flex items-start">
+      <span class="text-2xl mr-3 mt-1">⚠️</span>
+      <div class="flex-1">
+        <h3 class="font-semibold text-red-800 mb-2">Unable to get weather data</h3>
+        <p data-weather-target="errorMessage" class="text-red-600 mb-3"></p>
+        <div class="text-sm text-red-500">
+          <p class="mb-1"><strong>Try:</strong></p>
+          <ul class="list-disc list-inside space-y-1 ml-2">
+            <li>Check spelling: <code class="bg-red-50 px-1 rounded">São Paulo</code></li>
+            <li>Use city name instead of postal code</li>
+            <li>Try with country: <code class="bg-red-50 px-1 rounded">London, UK</code></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Weather Results -->
+  <div data-weather-target="results" class="hidden fade-in">
+    <!-- Current Weather Card -->
+    <div class="weather-card rounded-3xl p-8 mb-8 shadow-2xl">
+      <div class="flex items-center justify-between mb-6">
+        <div>
+          <h2 data-weather-target="location" class="text-2xl font-bold text-gray-800 mb-1"></h2>
+          <div data-weather-target="cacheIndicator" class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium">
+            <span class="w-2 h-2 rounded-full mr-2"></span>
+            <span></span>
+          </div>
+        </div>
+        <div class="text-right">
+          <div data-weather-target="currentTemp" class="text-5xl font-bold text-gray-800"></div>
+          <div data-weather-target="feelsLike" class="text-gray-600"></div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        <div class="text-center p-4 bg-blue-50 rounded-xl">
+          <div class="text-2xl mb-2">🌡️</div>
+          <div class="text-sm text-gray-600">Today's High</div>
+          <div data-weather-target="highTemp" class="font-semibold"></div>
+        </div>
+        <div class="text-center p-4 bg-blue-50 rounded-xl">
+          <div class="text-2xl mb-2">🌡️</div>
+          <div class="text-sm text-gray-600">Today's Low</div>
+          <div data-weather-target="lowTemp" class="font-semibold"></div>
+        </div>
+        <div class="text-center p-4 bg-blue-50 rounded-xl">
+          <div class="text-2xl mb-2">💧</div>
+          <div class="text-sm text-gray-600">Humidity</div>
+          <div data-weather-target="humidity" class="font-semibold"></div>
+        </div>
+        <div class="text-center p-4 bg-blue-50 rounded-xl">
+          <div class="text-2xl mb-2">🌤️</div>
+          <div class="text-sm text-gray-600">Conditions</div>
+          <div data-weather-target="description" class="font-semibold"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Extended Forecast -->
+    <div class="weather-card rounded-3xl p-8 shadow-2xl">
+      <h3 class="text-2xl font-bold text-gray-800 mb-6">📅 5-Day Extended Forecast</h3>
+      <div data-weather-target="forecast" class="grid grid-cols-1 md:grid-cols-5 gap-4"></div>
+    </div>
+  </div>
+</div>
